@@ -9,9 +9,9 @@ public class LoginTests : TestBase
     [SetUp]
     public void Start()
     {
+        driver = new Drivers().InitChrome(driver);
         try
         {
-            driver = new Drivers().InitChrome(driver);
             driver.Url = GeneralElements.pageUrl;
             GeneralElements.backToSiteButton.Click();
             new Login()
@@ -26,59 +26,33 @@ public class LoginTests : TestBase
                 .NavigateTologinPage()
                 .AssertLoginPageIsLoaded();
         }
-       
     }
 
     [Test]
     public void SuccessfulLogin()
     {
         test = extent.CreateTest("SuccessfulLogin").Info("Enter login credentials and verify.");
-        try
-        {
-            
-            new Login()
-                .ValidLogin()
-                .AssertMyProfilePageIsLoaded();
-        }
-        catch (Exception)
-        {
-            test.Log(Status.Fail, "The Test failed");
-            throw;
-        }
+        new Login()
+            .ValidLogin()
+            .AssertMyProfilePageIsLoaded();
     }
 
     [Test]
     public void LoginWithWrongCredentials()
     {
         test = extent.CreateTest("LoginWithWrongCredentials").Info("Enter login credentials and verify.");
-        try
-        {
-            new Login()
-                .WrongPassword()
-                .AssertWrongCredentialsMessageIsDisplayed();
-        }
-        catch (Exception)
-        {
-            test.Log(Status.Fail, "The Test failed");
-            throw;
-        }
+        new Login()
+            .WrongPassword()
+            .AssertWrongCredentialsMessageIsDisplayed();
     }
 
     [Test]
     public void LoginWithoutCredentials()
     {
         test = extent.CreateTest("LoginWithoutCredentials").Info("Press verify button with no credentials entered.");
-        try
-        {
-            new Login()
-                .NoCredentialsLogin()
-                .AssertValidationMessageIsDisplayed();
-        }
-        catch (Exception)
-        {
-            test.Log(Status.Fail, "The Test failed");
-            throw;
-        }
+
+        new Login()
+            .NoCredentialsLogin()
+            .AssertValidationMessageIsDisplayed();
     }
-    
 }

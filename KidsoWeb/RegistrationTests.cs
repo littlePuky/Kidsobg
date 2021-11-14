@@ -9,9 +9,9 @@ public class RegistrationTests : TestBase
     [SetUp]
     public void Start()
     {
+        driver = new Drivers().InitChrome(driver);
         try
         {
-            driver = new Drivers().InitChrome(driver);
             driver.Url = GeneralElements.pageUrl;
             GeneralElements.backToSiteButton.Click();
         }
@@ -26,18 +26,9 @@ public class RegistrationTests : TestBase
     public void SuccessfulRegistration()
     {
         test = extent.CreateTest("SuccessfulRegistration").Info("Enter registration credentials and verify.");
-        try
-        {
-            new Registration()
-                .enterCredentials()
-                .AssertCaptchaWarningIsDisplayed();
-            test.Log(Status.Pass);
-        }
-        catch (Exception)
-        {
-            test.Log(Status.Fail, "The Test failed");
-            throw;
-        }
+        new Registration()
+            .enterCredentials()
+            .AssertCaptchaWarningIsDisplayed();
+        test.Log(Status.Pass);
     }
-
 }
