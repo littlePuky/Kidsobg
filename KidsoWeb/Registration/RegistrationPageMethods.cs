@@ -8,7 +8,7 @@ namespace KidsoWeb.Registration
 {
     public partial class Registration
     {
-        public Registration enterCredentials()
+        public Registration EnterCredentials()
         {
             GeneralElements.registrationButton.Click();
             MrRadioButton.Click();

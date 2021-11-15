@@ -15,7 +15,7 @@ public class LoginTests : TestBase
             driver.Url = GeneralElements.pageUrl;
             GeneralElements.backToSiteButton.Click();
             new Login()
-                .NavigateTologinPage()
+                .NavigateToLoginPage()
                 .AssertLoginPageIsLoaded();
         }
         catch (Exception)
@@ -23,7 +23,7 @@ public class LoginTests : TestBase
             Refresh();
             GeneralElements.backToSiteButton.Click();
             new Login()
-                .NavigateTologinPage()
+                .NavigateToLoginPage()
                 .AssertLoginPageIsLoaded();
         }
     }

@@ -4,7 +4,7 @@ namespace KidsoWeb.Login
 {
     public partial class Login
     {
-        public Login NavigateTologinPage()
+        public Login NavigateToLoginPage()
         {
             GeneralElements.loginButton.Click();
             return this;

@@ -27,7 +27,7 @@ public class RegistrationTests : TestBase
     {
         test = extent.CreateTest("SuccessfulRegistration").Info("Enter registration credentials and verify.");
         new Registration()
-            .enterCredentials()
+            .EnterCredentials()
             .AssertSuccessfulLogin();
         test.Log(Status.Pass, "Test Successful!");
     }
