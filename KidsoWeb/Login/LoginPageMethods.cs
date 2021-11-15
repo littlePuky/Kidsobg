@@ -1,5 +1,4 @@
-﻿using System;
-using KidsoWeb.General;
+﻿using KidsoWeb.General;
 
 namespace KidsoWeb.Login
 {
@@ -10,6 +9,7 @@ namespace KidsoWeb.Login
             GeneralElements.loginButton.Click();
             return this;
         }
+
         public Login ValidLogin()
         {
             loginUsernameField.SendKeys(GeneralElements.userEmail);

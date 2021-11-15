@@ -5,9 +5,14 @@ namespace KidsoWeb.Registration
 {
     public partial class Registration
     {
-        public void AssertCaptchaWarningIsDisplayed()
+        public void AssertSuccessfulLogin()
         {
             GeneralMethods.VerifyPageUrl(GeneralElements.campaignPageUrl);
+        }
+
+        public void AssertCaptchaWarningIsDisplayed()
+        {
+            Assert.AreEqual("Моля попълнете полето антиспам верификация.", captchaWarningMessage.Text);
         }
     }
 }

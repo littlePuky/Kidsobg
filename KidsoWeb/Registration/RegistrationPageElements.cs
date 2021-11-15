@@ -20,6 +20,9 @@ namespace KidsoWeb.Registration
         public IWebElement agreeToTermsButton => driver.FindElement(By.Name("psgdpr"));
         public IWebElement submitButton => driver.FindElement(By.CssSelector(".form-control-submit"));
         public IWebElement captchaWarningMessage => driver.FindElement(By.Id("captcha"));
-        public IWebElement captcha => driver.FindElement(By.XPath("//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]"));
+
+        public IWebElement captcha =>
+            driver.FindElement(By.XPath(
+                "//iframe[starts-with(@name, 'a-') and starts-with(@src, 'https://www.google.com/recaptcha')]"));
     }
 }

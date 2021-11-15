@@ -35,6 +35,7 @@ public class LoginTests : TestBase
         new Login()
             .ValidLogin()
             .AssertMyProfilePageIsLoaded();
+        test.Log(Status.Pass, "Test Successful!");
     }
 
     [Test]
@@ -44,6 +45,7 @@ public class LoginTests : TestBase
         new Login()
             .WrongPassword()
             .AssertWrongCredentialsMessageIsDisplayed();
+        test.Log(Status.Pass, "Test Successful!");
     }
 
     [Test]
@@ -54,5 +56,6 @@ public class LoginTests : TestBase
         new Login()
             .NoCredentialsLogin()
             .AssertValidationMessageIsDisplayed();
+        test.Log(Status.Pass, "Test Successful!");
     }
 }

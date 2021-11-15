@@ -10,10 +10,9 @@ public class Drivers
     {
         var options = new ChromeOptions();
         options.AddArgument("--disable-notifications");
-        driver = new ChromeDriver(options );
+        driver = new ChromeDriver(options);
         driver.Manage().Window.Maximize();
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         return driver;
     }
-    
 }

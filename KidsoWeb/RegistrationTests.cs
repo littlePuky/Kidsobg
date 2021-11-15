@@ -28,7 +28,17 @@ public class RegistrationTests : TestBase
         test = extent.CreateTest("SuccessfulRegistration").Info("Enter registration credentials and verify.");
         new Registration()
             .enterCredentials()
+            .AssertSuccessfulLogin();
+        test.Log(Status.Pass, "Test Successful!");
+    }
+
+    [Test]
+    public void TestCaptchaWarning()
+    {
+        test = extent.CreateTest("TestCaptchaWarning").Info("Press submit and verify.");
+        new Registration()
+            .PressSubmitButtonWithNoCredentialsEntered()
             .AssertCaptchaWarningIsDisplayed();
-        test.Log(Status.Pass);
+        test.Log(Status.Pass, "Test Successful!");
     }
 }

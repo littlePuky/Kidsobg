@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using KidsoWeb.General;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
 namespace KidsoWeb.Registration
@@ -9,7 +10,6 @@ namespace KidsoWeb.Registration
     {
         public Registration enterCredentials()
         {
-           
             GeneralElements.registrationButton.Click();
             MrRadioButton.Click();
             firstNameField.SendKeys(GeneralElements.userFirstName);
@@ -32,7 +32,17 @@ namespace KidsoWeb.Registration
             catch (Exception e)
             {
             }
-            
+
+            return this;
+        }
+
+        public Registration PressSubmitButtonWithNoCredentialsEntered()
+        {
+            GeneralElements.registrationButton.Click();
+            var actions = new Actions(driver);
+            actions.MoveToElement(agreeToTermsButton);
+            actions.Perform();
+            submitButton.Click();
             return this;
         }
     }

@@ -9,14 +9,15 @@ namespace KidsoWeb.Login
         {
             GeneralMethods.VerifyPageUrl(myProfileUrl);
         }
+
         public void AssertWrongCredentialsMessageIsDisplayed()
         {
-            Assert.AreEqual(wrongCredentialsMessage.Text,"Невалиден e-mail или парола");
+            Assert.AreEqual("Невалиден e-mail или парола", wrongCredentialsMessage.Text);
         }
 
         public void AssertValidationMessageIsDisplayed()
         {
-            Assert.AreEqual(loginUsernameField.GetAttribute("validationMessage"), "Задължително поле");
+            Assert.AreEqual("Задължително поле", loginUsernameField.GetAttribute("validationMessage"));
         }
 
         public void AssertLoginPageIsLoaded()
