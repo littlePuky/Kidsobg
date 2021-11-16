@@ -13,12 +13,12 @@ public class RegistrationTests : TestBase
         try
         {
             driver.Url = GeneralElements.pageUrl;
-            GeneralElements.backToSiteButton.Click();
+            //GeneralElements.backToSiteButton.Click();
         }
         catch (Exception)
         {
             Refresh();
-            GeneralElements.backToSiteButton.Click();
+            //GeneralElements.backToSiteButton.Click();
         }
     }
 

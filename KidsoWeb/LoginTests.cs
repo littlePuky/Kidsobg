@@ -13,7 +13,7 @@ public class LoginTests : TestBase
         try
         {
             driver.Url = GeneralElements.pageUrl;
-            GeneralElements.backToSiteButton.Click();
+            //GeneralElements.backToSiteButton.Click();
             new Login()
                 .NavigateToLoginPage()
                 .AssertLoginPageIsLoaded();
@@ -21,7 +21,7 @@ public class LoginTests : TestBase
         catch (Exception)
         {
             Refresh();
-            GeneralElements.backToSiteButton.Click();
+            //GeneralElements.backToSiteButton.Click();
             new Login()
                 .NavigateToLoginPage()
                 .AssertLoginPageIsLoaded();
