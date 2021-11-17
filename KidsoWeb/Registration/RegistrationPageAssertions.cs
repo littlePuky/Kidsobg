@@ -7,7 +7,7 @@ namespace KidsoWeb.Registration
     {
         public void AssertSuccessfulLogin()
         {
-            GeneralMethods.VerifyPageUrl(GeneralElements.campaignPageUrl);
+            GeneralMethods.VerifyPageUrl(Login.Login.loginPageUrl);
         }
 
         public void AssertCaptchaWarningIsDisplayed()
